@@ -1,0 +1,500 @@
+{
+  "data": {
+    "vendors": {
+      "totalCount": 30,
+      "edges": [
+        {
+          "cursor": "AflkFks=",
+          "node": {
+            "id": "vnd_3431338d17315cf4887aad3eed6b1e60",
+            "code": "FG_TRANSFER",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SLOT",
+              "FISH",
+              "POKER"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_fungaming.png",
+            "name": "Fun Gaming",
+            "shortcode": "FG",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AfAjlE8=",
+          "node": {
+            "id": "vnd_bbe20a4025a657a8b9a9d37c930f4d12",
+            "code": "IMESPORTSBULL",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SPORTSBOOK"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_imesportsbull.png",
+            "name": "IM",
+            "shortcode": "IM",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "Aew2bjk=",
+          "node": {
+            "id": "vnd_decfac69057654bf85e63b78ce1f0f96",
+            "code": "V365CARDS",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "POKER"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_365gaming.png",
+            "name": "365G",
+            "shortcode": "365G",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AevjlIQ=",
+          "node": {
+            "id": "vnd_7f2d21eea727512cb793b972778eae6e",
+            "code": "NEWWORLD",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "POKER"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_newworld.png",
+            "name": "NW",
+            "shortcode": "NW",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AeuruJY=",
+          "node": {
+            "id": "vnd_e20ffffafb5a5fd0a59a5f73721b9f16",
+            "code": "IGLIVECASINO",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "LIVE"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_iglivecasino.png",
+            "name": "IGaming",
+            "shortcode": "IG",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AefH0SI=",
+          "node": {
+            "id": "vnd_0c2c1429921c56d09a1dc31c8e72f481",
+            "code": "ONEBOOK",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SPORTSBOOK"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_onebook.png",
+            "name": "OB",
+            "shortcode": "OB",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AeAoWDw=",
+          "node": {
+            "id": "vnd_2101d4f9216056ce9948514c4ec82288",
+            "code": "KY",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "POKER"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_ky.png",
+            "name": "KY",
+            "shortcode": "KY",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AcYL7pI=",
+          "node": {
+            "id": "vnd_371035ab165a59018fc2b52c03ed9b23",
+            "code": "JDB_TRANSFER",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SLOT",
+              "FISH",
+              "LOTTERY",
+              "POKER"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_jdb.png",
+            "name": "JDB Transfer",
+            "shortcode": "JDB",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "Aa1Niao=",
+          "node": {
+            "id": "vnd_9ddd2dce707e54bfa5346bf160d44e53",
+            "code": "EVOLIVE_TRANSFER",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "LIVE"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_evolive.png",
+            "name": "EVO",
+            "shortcode": "EVO",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AZr57vM=",
+          "node": {
+            "id": "vnd_21ec0235a9ae5d0aa3ef132118e044fe",
+            "code": "AG",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SLOT",
+              "POKER",
+              "LIVE",
+              "FISH"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_ag.png",
+            "name": "AG",
+            "shortcode": "AG",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AZQ0NyI=",
+          "node": {
+            "id": "vnd_b51611ccc9705d92a96fb1c99031fae8",
+            "code": "SPADEGAMING_TRANSFER",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "FISH",
+              "SLOT",
+              "POKER"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_spadegaming.png",
+            "name": "SpadeGaming Transfer",
+            "shortcode": "SG",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AYC7Ok0=",
+          "node": {
+            "id": "vnd_4d59a274601454c6aa97e9f12d303838",
+            "code": "SBO",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SPORTSBOOK"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_sbo.png",
+            "name": "SBO",
+            "shortcode": "SBO",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AXsSQks=",
+          "node": {
+            "id": "vnd_0d4321fcedfb5e578c57e8f3c86c1bf3",
+            "code": "PGSOFT_TRANSFER",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SLOT",
+              "POKER"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_pgsoft.png",
+            "name": "PGSoft Transfer",
+            "shortcode": "PG",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AXhD4Mk=",
+          "node": {
+            "id": "vnd_cf4eb0e9b5945ee6acdccfc7f0d48bfa",
+            "code": "BBIN",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SPORTSBOOK",
+              "LIVE",
+              "SLOT",
+              "POKER",
+              "LOTTERY",
+              "FISH"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_bbin.png",
+            "name": "BBIN",
+            "shortcode": "BBIN",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AXNrV0Y=",
+          "node": {
+            "id": "vnd_3ca28843748f563985203795fab15ba6",
+            "code": "BG",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SLOT",
+              "FISH"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_bg.png",
+            "name": "BG",
+            "shortcode": "BG",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AWr9Iqc=",
+          "node": {
+            "id": "vnd_42956955a9cf5b599aec38b70dbd9926",
+            "code": "CQ9_TRANSFER",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SLOT",
+              "POKER",
+              "FISH"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_cq9.png",
+            "name": "CQ9",
+            "shortcode": "CQ9",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AWqWeI0=",
+          "node": {
+            "id": "vnd_664ecb0de8325195bce0edd44913c4d7",
+            "code": "HABANERO_TRANSFER",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SLOT",
+              "POKER",
+              "LIVE"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_habanero.png",
+            "name": "Habanero",
+            "shortcode": "HAB",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AWO+WF0=",
+          "node": {
+            "id": "vnd_f82e7cdd9e27501cba5efadd73dc3388",
+            "code": "LONGCHENG",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "POKER",
+              "FISH"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_longcheng.png",
+            "name": "LC",
+            "shortcode": "LC",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AV7PsCc=",
+          "node": {
+            "id": "vnd_c09976bed0455bcf9f9951ceafaaa882",
+            "code": "LEGPOKER",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "POKER"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_legpoker.png",
+            "name": "LG",
+            "shortcode": "LG",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AVQCPVI=",
+          "node": {
+            "id": "vnd_0392fb434bfd5965af9f891a75f140aa",
+            "code": "EBET_TRANSFER",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SLOT",
+              "LIVE"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_ebet.png",
+            "name": "EBET",
+            "shortcode": "EBET",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "ATsnhig=",
+          "node": {
+            "id": "vnd_f8094702fef75bac8682bdf2e36bdeb3",
+            "code": "KENOGAME",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "LOTTERY"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_kenogame.png",
+            "name": "LB KENO",
+            "shortcode": "LB KENO",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "ATsmpfo=",
+          "node": {
+            "id": "vnd_ac76f79c07435c67b075ad001196d2a7",
+            "code": "MGPLUS",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SLOT",
+              "POKER",
+              "LIVE",
+              "FISH",
+              "SPORTSBOOK"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_mgplus.png",
+            "name": "MG+",
+            "shortcode": "MG+",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "ASi5WaQ=",
+          "node": {
+            "id": "vnd_a2266066c1a95f08ac1e267661d607c8",
+            "code": "CMD",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SPORTSBOOK"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_cmdsportsbook.png",
+            "name": "CMD",
+            "shortcode": "CMD",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "ARabAyo=",
+          "node": {
+            "id": "vnd_1a0e9e9fbae259069c357fb764d534c9",
+            "code": "PT",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SLOT",
+              "LIVE",
+              "POKER"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_pt.png",
+            "name": "PT",
+            "shortcode": "PT",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AQqNoi4=",
+          "node": {
+            "id": "vnd_33c36c5be5f55aae89ec2d1d4e325100",
+            "code": "NETENT_TRANSFER",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "SLOT",
+              "POKER",
+              "LIVE"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_netent.png",
+            "name": "FGHB",
+            "shortcode": "FGHB",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AQZuOSg=",
+          "node": {
+            "id": "vnd_38603197e6c7511f8f34b4003f57fc3d",
+            "code": "SGWIN",
+            "type": "TRANSFER",
+            "gameTypes": [
+              "LOTTERY"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_sgwin.png",
+            "name": "SG WIN",
+            "shortcode": "SGWIN",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "ANOzrL0=",
+          "node": {
+            "id": "vnd_bbb7afee6ce45144a979c63922a23a4d",
+            "code": "JDB",
+            "type": "SEAMLESS",
+            "gameTypes": [
+              "SLOT",
+              "FISH",
+              "LOTTERY"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_jdb.png",
+            "name": "JDB",
+            "shortcode": "JDB",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AMOxqpI=",
+          "node": {
+            "id": "vnd_3a2a2d70bd585db68427bdeb9794df52",
+            "code": "SPADEGAMING",
+            "type": "SEAMLESS",
+            "gameTypes": [
+              "FISH",
+              "SLOT",
+              "POKER"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_spadegaming.png",
+            "name": "SpadeGaming",
+            "shortcode": "SG",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AK/rY0o=",
+          "node": {
+            "id": "vnd_f0d6aae72c705dccbb747869b9f26152",
+            "code": "PGSOFT",
+            "type": "SEAMLESS",
+            "gameTypes": [
+              "SLOT",
+              "POKER"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_pgsoft.png",
+            "name": "PGSoft",
+            "shortcode": "PG",
+            "enabled": true
+          }
+        },
+        {
+          "cursor": "AESDJIE=",
+          "node": {
+            "id": "vnd_48eb6a78167a5e53952ec7ca264b63d5",
+            "code": "EBET",
+            "type": "SEAMLESS",
+            "gameTypes": [
+              "SLOT",
+              "LIVE"
+            ],
+            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_ebet.png",
+            "name": "EBET",
+            "shortcode": "EBET",
+            "enabled": true
+          }
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": false,
+        "endCursor": "AESDJIE="
+      }
+    }
+  }
+}
