@@ -162,17 +162,14 @@ export const Home =(props)=>{
             ...data
         }));
     },[]);
-    console.log('hotGames', hotGames.length);
+
   return (
       <>
-          <Grid>
+              <VendorSlider
+                  handleVendor={handleVendor}
+                  active={modelState.active}
+              />
               <Grid container item xs={12} sm={12}>
-                  <Box width="85%" maxWidth="85%">
-                      <VendorSlider
-                          handleVendor={handleVendor}
-                          active={modelState.active}
-                      />
-                  </Box>
                   <Grid justify="space-between" className={classes.mainContainer} container>
                       <Box p={1}>
                           <Typography variant="h5" color="primary" component="h5">
@@ -300,7 +297,6 @@ export const Home =(props)=>{
                           </Paper>}
                   </Grid>
               </Grid>
-          </Grid>
       </>
   );
 };

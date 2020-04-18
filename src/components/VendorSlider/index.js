@@ -14,14 +14,8 @@ import fakeData from '../../data/vendors.json';
 const allVendors = fakeData.data.vendors.edges;
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        height: 180,
-    },
     cardroot: {
         maxWidth: 345,
-    },
-    container: {
-        display: 'flex',
     },
     media: {
         height: 140,
@@ -97,32 +91,32 @@ export const VendorSlider = (props) => {
     const vendorsSlideData = React.useMemo(() => {
         return allVendors.slice(steps.current, steps.nextPage).map((arr, i) => {
             return (
-                <Grow
+                <Grid
                       onClick={()=>props.handleVendor(arr.node.id, arr.node.name)}
                       key={arr.node.id}
                       in={true}
                       style={{transformOrigin: '0 0 0'}}
                       {...(true ? {timeout: 1000} : {})}
                 >
-                    <Box display="flex" flexDirection="column">
+                    <Grid>
                         <Paper elevation={4} className={props.active === arr.node.id ? classes.active: classes.paper}>
-                            <div className={classes.svg}>
+                            <Box className={classes.svg}>
                                 <img className={classes.imgVendor} src={arr.node.defaultImage} alt={arr.node.name}/>
-                            </div>
+                            </Box>
                         </Paper>
                         <Box textAlign="center">
                             <Typography color="primary" component="p">
                                 {arr.node.name}
                             </Typography>
                         </Box>
-                    </Box>
-                </Grow>
+                    </Grid>
+                </Grid>
             );
         })
     },[classes,props,steps]);
 
     return (
-        <div className={classes.root}>
+        <Grid xl={12} lg={12} md={12} sm={12} container item>
             <FormControlLabel
                 control={
                     <Grid container justify="center" item>
@@ -136,9 +130,9 @@ export const VendorSlider = (props) => {
                 }
                 label=""
             />
-            <div className={classes.container}>
+            <Grid xl={12} lg={12} md={12} sm={12} container item>
                 {vendorsSlideData}
-            </div>
-        </div>
+            </Grid>
+        </Grid>
     );
 };
