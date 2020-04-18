@@ -77,7 +77,7 @@ export const VendorSlider = (props) => {
             ...prevState,
             ...data
         }));
-    },[props.active]);
+    },[]);
 
     const handleBack = React.useCallback(() => {
         const data = {current: steps.nextPage >= 14 ?
