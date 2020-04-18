@@ -20,6 +20,6 @@ export const App=()=> {
         {routes}
       </Layout>
   );
-}
+};
 
 export default App;

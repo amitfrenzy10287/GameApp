@@ -1,7 +1,9 @@
 import React,{ useCallback, useState} from 'react';
 import { Paper, withStyles, Grid, TextField, Button, FormControlLabel, Checkbox } from '@material-ui/core';
+import Box from '@material-ui/core/Box';
 import { Face, LockOpen } from '@material-ui/icons';
 import { Alert, AlertTitle } from '@material-ui/lab';
+import { VendorSlider } from '../../components/VendorSlider';
 
 const styles = theme => ({
     margin: {
@@ -9,6 +11,13 @@ const styles = theme => ({
     },
     padding: {
         padding: theme.spacing(1)
+    },
+    btnForgotPwd: {
+        textTransform: 'none'
+    },
+    vendorContainer: {
+        minHeight: '200px',
+        marginBottom: theme.spacing(3),
     }
 });
 
@@ -17,9 +26,11 @@ const Login =(props)=>{
         const [userData,setUserData] = useState({
             username: '',
             password:'',
-            error: false
+            error: false,
+            active: 'vnd_3a2a2d70bd585db68427bdeb9794df52',
+            currentVendor: 'SPADEGAMING'// Default Vendor
         });
-        const onLogin =()=>{
+        const onLogin = useCallback(()=>{
             const data = {};
             if(userData.username ==='' || userData.password ===''){
                 data['error'] = true;
@@ -31,8 +42,8 @@ const Login =(props)=>{
                 ...prevState,
                 ...data
             }));
-            // props.history.push('/home');
-        };
+        },[userData, props.history]);
+
         const onLoginChange = useCallback((e, type)=>{
             const data = {};
             data[type] = e.target.value;
@@ -40,13 +51,25 @@ const Login =(props)=>{
                 ...prevState,
                 ...data
             }));
-        },['']);
+        },[]);
+
+    const handleVendor = React.useCallback((vendorId, name)=>{
+        const data = {active: vendorId, currentVendor: name};
+        setUserData(prevState => ({
+            ...prevState,
+            ...data
+        }));
+    },[]);
+
         return (
             <Grid container justify="center" >
-            <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-                <Grid style={{minHeight: '150px'}}>
-                    scroll goes here
+                <Grid className={classes.vendorContainer} container item>
+                    <VendorSlider
+                        handleVendor={handleVendor}
+                        active={userData.active}
+                    />
                 </Grid>
+            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
                 <Paper className={classes.padding}>
                     <Grid>
                         {userData.error && <Alert severity="error">
@@ -88,13 +111,20 @@ const Login =(props)=>{
                                 } label="Remember me" />
                             </Grid>
                             <Grid item>
-                                <Button disableFocusRipple disableRipple style={{ textTransform: "none" }} variant="text" color="primary">Forgot password ?</Button>
+                                <Button disableFocusRipple disableRipple
+                                        className={classes.btnForgotPwd}
+                                        variant="text" color="primary"
+                                >
+                                    Forgot password ?
+                                </Button>
                             </Grid>
                         </Grid>
-                        <Grid container style={{ marginTop: '10px' }}>
-                            <Button onClick={e=>onLogin(e)} variant="outlined" fullWidth color="primary">
-                                Login
-                            </Button>
+                        <Grid container>
+                            <Box mt={2}>
+                                <Button onClick={e=>onLogin(e)} variant="outlined" fullWidth color="primary">
+                                    Login
+                                </Button>
+                            </Box>
                         </Grid>
                     </div>
                 </Paper>

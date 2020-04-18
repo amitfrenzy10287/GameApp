@@ -1,17 +1,19 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import GameCard from '../../components/GameCard';
 import { makeStyles } from '@material-ui/core/styles';
 import {Grid,Box,Typography,Button} from '@material-ui/core';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
+import Paper from '@material-ui/core/Paper';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { SeeAllGames } from '../../containers/SeeAllGames';
-import InfiniteScroll from 'react-infinite-scroll-component';
+import { VendorSlider } from '../../components/VendorSlider';
+import { Alert, AlertTitle } from '@material-ui/lab';
 
 import fakeGamesData from '../../data/games.json';
 const useStyles = makeStyles((theme) => ({
@@ -33,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
     },
     hotGameGridList: {
         width: '95%',
-        height: 500,
         // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
         transform: 'translateZ(0)',
     },
@@ -57,12 +58,13 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
         border: '2px solid #000',
         boxShadow: theme.shadows[5],
-        padding: theme.spacing(2, 4, 3),
         maxWidth: '60%',
         minWidth: '60%',
-        height: 500,
-        overflowY:'hidden'
     },
+    paperMessage: {
+        padding:theme.spacing(3),
+        width:'100%',
+    }
 }));
 
 export const Home =(props)=>{
@@ -71,7 +73,9 @@ export const Home =(props)=>{
     const [modelState, setModelState] = React.useState({
         hot:false,
         new:false,
-        popular:false
+        popular:false,
+        active: 'vnd_3a2a2d70bd585db68427bdeb9794df52',
+        currentVendor: 'SPADEGAMING'// Default Vendor
     });
 
     const handleOpen = (type) => {
@@ -92,36 +96,41 @@ export const Home =(props)=>{
         }));
     };
 
-    const fetchMoreGames=(e)=>{
-        console.log('scrolled');
-    };
-
     let lcnt = 0;
-    const latestGames = React.useMemo(()=>Object.keys(gamesData).map((key)=>{
-        if(!gamesData) return;
-        if(gamesData[key].node.new === true && lcnt < 6) {
+    const latestGames = React.useMemo(()=>
+        Object.keys(gamesData).map((key)=>{
+        if(!gamesData) return false;
+        if(gamesData[key].node.new === true && gamesData[key].node.vendor.id === modelState.active && lcnt < 6) {
             lcnt++;
             return (
                 <GameCard key={gamesData[key].node.id} {...gamesData[key].node} />
             );
+        }else{
+            return undefined;
         }
-    }),[gamesData,lcnt]);
+    }).filter(s=>{
+        return s !== undefined;
+    }),[gamesData,lcnt,modelState.active]);
 
     let fcnt = 0;
     const favGames = React.useMemo(()=>Object.keys(gamesData).map((key)=>{
-        if(!gamesData) return;
-        if(gamesData[key].node.favorite === true && fcnt < 6) {
+        if(!gamesData) return false;
+        if(gamesData[key].node.hot!== true && gamesData[key].node.new!== true && gamesData[key].node.vendor.id === modelState.active && fcnt < 6) {
             fcnt++;
             return (
                 <GameCard key={gamesData[key].node.id} {...gamesData[key].node} />
             );
+        }else{
+            return undefined;
         }
-    }),[gamesData,fcnt]);
+    }).filter(s=>{
+        return s !== undefined;
+    }),[gamesData,fcnt,modelState.active]);
 
     let hcnt = 0;
     const hotGames = React.useMemo(()=>Object.keys(gamesData).map((key)=>{
-        if(!gamesData) return;
-        if(gamesData[key].node.hot === true && hcnt < 7) {
+        if(!gamesData) return false;
+        if(gamesData[key].node.hot === true && gamesData[key].node.vendor.id === modelState.active && hcnt < 7) {
             hcnt++;
             return (
                 <GridListTile className={classes.tileSize} key={gamesData[key].node.id} rows={hcnt <=3 ? 2: 1} cols={hcnt ===1 ? 2 : 1}>
@@ -139,13 +148,31 @@ export const Home =(props)=>{
                     />
                 </GridListTile>
             );
+        }else{
+            return undefined;
         }
-    }),[gamesData,hcnt]);
+    }).filter(s=>{
+        return s !== undefined;
+    }),[gamesData,hcnt,modelState.active,classes]);
 
+    const handleVendor = React.useCallback((vendorId, name)=>{
+        const data = {active: vendorId, currentVendor: name};
+        setModelState(prevState => ({
+            ...prevState,
+            ...data
+        }));
+    },[]);
+    console.log('hotGames', hotGames.length);
   return (
       <>
           <Grid>
               <Grid container item xs={12} sm={12}>
+                  <Box width="85%" maxWidth="85%">
+                      <VendorSlider
+                          handleVendor={handleVendor}
+                          active={modelState.active}
+                      />
+                  </Box>
                   <Grid justify="space-between" className={classes.mainContainer} container>
                       <Box p={1}>
                           <Typography variant="h5" color="primary" component="h5">
@@ -153,11 +180,10 @@ export const Home =(props)=>{
                           </Typography>
                       </Box>
                       <Box p={1} justifyContent="flex-end">
-                          <Button onClick={()=>handleOpen('new')} variant="contained" color="primary">
+                          {latestGames.length > 0 && <Button onClick={()=>handleOpen('new')} variant="contained" color="primary">
                               See All
-                          </Button>
+                          </Button>}
                           <Modal
-                              disableScrollLock={true}
                               aria-labelledby="transition-modal-title"
                               aria-describedby="transition-modal-description"
                               className={classes.modal}
@@ -171,21 +197,20 @@ export const Home =(props)=>{
                           >
                               <Fade in={modelState.new}>
                                   <div className={classes.paper}>
-                                      <InfiniteScroll
-                                          dataLength={10}
-                                          next={fetchMoreGames}
-                                          hasMore={true}
-                                          loader={<h4>Loading...</h4>}
-                                      >
-                                        <SeeAllGames type="new" />
-                                      </InfiniteScroll>
+                                      <SeeAllGames vendorId={modelState.active} currentVendor={modelState.currentVendor} type="new" />
                                   </div>
                               </Fade>
                           </Modal>
                       </Box>
                   </Grid>
                   <Grid container item xs={12} sm={12}>
-                      {latestGames}
+                      {latestGames.length > 0 ? latestGames:
+                          <Paper className={classes.paperMessage}>
+                              <Alert severity="info">
+                                  <AlertTitle>Oops!</AlertTitle>
+                                  Sorry we don't have — <strong>Latest games at the moment!</strong>
+                              </Alert>
+                          </Paper>}
                   </Grid>
               </Grid>
               <Grid container item xs={12} sm={12}>
@@ -196,9 +221,9 @@ export const Home =(props)=>{
                           </Typography>
                       </Box>
                       <Box p={1} justifyContent="flex-end">
-                          <Button onClick={()=>handleOpen('hot')} variant="contained" color="primary">
+                          {hotGames.length > 0 && <Button onClick={()=>handleOpen('hot')} variant="contained" color="primary">
                               See All
-                          </Button>
+                          </Button>}
                           <Modal
                               aria-labelledby="transition-modal-title"
                               aria-describedby="transition-modal-description"
@@ -213,18 +238,25 @@ export const Home =(props)=>{
                           >
                               <Fade in={modelState.hot}>
                                   <div className={classes.paper}>
-                                        <SeeAllGames type="hot" />
+                                      <SeeAllGames vendorId={modelState.active} currentVendor={modelState.currentVendor}  type="hot" />
                                   </div>
                               </Fade>
                           </Modal>
                       </Box>
                   </Grid>
                   <Grid container item xs={12} sm={12}>
-                      <div className={classes.rootHotGame}>
+                      { hotGames.length > 0 ?
+                          <div className={classes.rootHotGame}>
                           <GridList cellHeight={160} className={classes.hotGameGridList} cols={4}>
-                            {hotGames}
+                                  {hotGames}
                           </GridList>
-                      </div>
+                      </div>:
+                      <Paper className={classes.paperMessage}>
+                          <Alert severity="info">
+                              <AlertTitle>Oops!</AlertTitle>
+                              Sorry we don't have — <strong>Hot games at the moment!</strong>
+                          </Alert>
+                      </Paper>}
                   </Grid>
               </Grid>
               <Grid container item xs={12} sm={12}>
@@ -235,9 +267,9 @@ export const Home =(props)=>{
                           </Typography>
                       </Box>
                       <Box p={1} justifyContent="flex-end">
-                          <Button onClick={()=>handleOpen('popular')} variant="contained" color="primary">
+                          {favGames.length > 0 && <Button onClick={()=>handleOpen('popular')} variant="contained" color="primary">
                               See All
-                          </Button>
+                          </Button>}
                           <Modal
                               aria-labelledby="transition-modal-title"
                               aria-describedby="transition-modal-description"
@@ -252,14 +284,20 @@ export const Home =(props)=>{
                           >
                               <Fade in={modelState.popular}>
                                   <div className={classes.paper}>
-                                      <SeeAllGames type="popular" />
+                                      <SeeAllGames vendorId={modelState.active} currentVendor={modelState.currentVendor} type="favorite" />
                                   </div>
                               </Fade>
                           </Modal>
                       </Box>
                   </Grid>
                   <Grid container item xs={12} sm={12}>
-                      {favGames}
+                      {favGames.length > 0 ? favGames:
+                          <Paper className={classes.paperMessage}>
+                              <Alert severity="info">
+                                  <AlertTitle>Oops!</AlertTitle>
+                                  Sorry we don't have — <strong>Popular games at the moment!</strong>
+                              </Alert>
+                          </Paper>}
                   </Grid>
               </Grid>
           </Grid>

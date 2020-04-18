@@ -14,7 +14,7 @@
               "FISH",
               "POKER"
             ],
-            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_fungaming.png",
+            "defaultImage": "https://static.aonewallet.com/images/fg/logo.png",
             "name": "Fun Gaming",
             "shortcode": "FG",
             "enabled": true
@@ -29,7 +29,7 @@
             "gameTypes": [
               "SPORTSBOOK"
             ],
-            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_imesportsbull.png",
+            "defaultImage": "https://static.aonewallet.com/images/fg/logo.png",
             "name": "IM",
             "shortcode": "IM",
             "enabled": true
@@ -44,7 +44,7 @@
             "gameTypes": [
               "POKER"
             ],
-            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_365gaming.png",
+            "defaultImage": "https://static.aonewallet.com/images/fg/logo.png",
             "name": "365G",
             "shortcode": "365G",
             "enabled": true
@@ -59,7 +59,7 @@
             "gameTypes": [
               "POKER"
             ],
-            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_newworld.png",
+            "defaultImage": "https://static.aonewallet.com/images/fg/logo.png",
             "name": "NW",
             "shortcode": "NW",
             "enabled": true
@@ -74,7 +74,7 @@
             "gameTypes": [
               "LIVE"
             ],
-            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_iglivecasino.png",
+            "defaultImage": "https://static.aonewallet.com/images/fg/logo.png",
             "name": "IGaming",
             "shortcode": "IG",
             "enabled": true
@@ -89,7 +89,7 @@
             "gameTypes": [
               "SPORTSBOOK"
             ],
-            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_onebook.png",
+            "defaultImage": "https://static.aonewallet.com/images/fg/logo.png",
             "name": "OB",
             "shortcode": "OB",
             "enabled": true
@@ -104,7 +104,7 @@
             "gameTypes": [
               "POKER"
             ],
-            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_ky.png",
+            "defaultImage": "https://static.aonewallet.com/images/fg/logo.png",
             "name": "KY",
             "shortcode": "KY",
             "enabled": true
@@ -122,7 +122,7 @@
               "LOTTERY",
               "POKER"
             ],
-            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_jdb.png",
+            "defaultImage": "https://static.aonewallet.com/images/fg/logo.png",
             "name": "JDB Transfer",
             "shortcode": "JDB",
             "enabled": true
@@ -137,7 +137,7 @@
             "gameTypes": [
               "LIVE"
             ],
-            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_evolive.png",
+            "defaultImage": "https://static.aonewallet.com/images/fg/logo.png",
             "name": "EVO",
             "shortcode": "EVO",
             "enabled": true
@@ -155,7 +155,7 @@
               "LIVE",
               "FISH"
             ],
-            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_ag.png",
+            "defaultImage": "https://static.aonewallet.com/images/fg/logo.png",
             "name": "AG",
             "shortcode": "AG",
             "enabled": true
@@ -172,7 +172,7 @@
               "SLOT",
               "POKER"
             ],
-            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_spadegaming.png",
+            "defaultImage": "https://static.aonewallet.com/images/fg/logo.png",
             "name": "SpadeGaming Transfer",
             "shortcode": "SG",
             "enabled": true
@@ -187,7 +187,7 @@
             "gameTypes": [
               "SPORTSBOOK"
             ],
-            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_sbo.png",
+            "defaultImage": "https://static.aonewallet.com/images/fg/logo.png",
             "name": "SBO",
             "shortcode": "SBO",
             "enabled": true
@@ -452,7 +452,7 @@
               "SLOT",
               "POKER"
             ],
-            "defaultImage": "https://static-staging.aonewallet.com/images/thumbnails/icon_spadegaming.png",
+            "defaultImage": "https://static.aonewallet.com/images/fg/logo.png",
             "name": "SpadeGaming",
             "shortcode": "SG",
             "enabled": true
